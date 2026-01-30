@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Change Text Color</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 2rem;
+      }
+
+      #target-text {
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+      }
+
+      #color-picker {
+        margin: 0 0.75rem 0 0.5rem;
+        vertical-align: middle;
+      }
+    </style>
+  </head>
+  <body>
+    <p id="target-text">Click the button to change my color.</p>
+    <label for="color-picker">Pick a color:</label>
+    <input id="color-picker" type="color" value="#1d4ed8" />
+    <button id="color-button" type="button">Change text color</button>
+
+    <script>
+      const targetText = document.getElementById("target-text");
+      const colorButton = document.getElementById("color-button");
+      const colorPicker = document.getElementById("color-picker");
+
+      colorButton.addEventListener("click", () => {
+        targetText.style.color = colorPicker.value;
+      });
+    </script>
+  </body>
+</html>
